@@ -35,7 +35,7 @@ jobs:
           NODE_OPTIONS: --openssl-legacy-provider --max_old_space_size=4096
         run: |-
           npm run docs:build
-          > src/.vuepress/dist/.nojekyll
+          > .vuepress/dist/.nojekyll
 
       - name: 部署文档
         uses: JamesIves/github-pages-deploy-action@v4
@@ -43,5 +43,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         with:
           branch: blog_pages
-          folder: src/.vuepress/dist
+          folder: .vuepress/dist
 
